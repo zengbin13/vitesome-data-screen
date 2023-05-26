@@ -9,6 +9,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    NarBar: typeof import('./src/components/NarBar/index.vue')['default']
+    Navbar: typeof import('./src/components/Navbar/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScaleScreen: typeof import('./src/components/ScaleScreen/index.vue')['default']

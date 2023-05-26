@@ -66,6 +66,16 @@ export default defineConfig({
     UnoCSS(),
   ],
 
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://adminapibeta.jujiankeji.com',
+        changeOrigin: true,
+        // rewrite: path => path.replace(/^\/api/, ''),
+      },
+    },
+  },
+
   // https://github.com/vitest-dev/vitest
   test: {
     environment: 'jsdom',

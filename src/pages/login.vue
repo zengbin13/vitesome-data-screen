@@ -1,21 +1,25 @@
-<script setup lang="ts">
-import { useStorage } from '@vueuse/core'
+<script setup>
 import backgroundImage from '~/assets/images/background_pic.png'
+import { loginApi } from '~/utils/apis'
 
 const backgroundPic = ref(backgroundImage)
 
 const formData = ref({
-  farm: 'xxxxx',
-  henhouse: 'yyyyy',
+  farm: '19100000001',
+  henhouse: '666888',
 })
 
 const router = useRouter()
-function onSubmit() {
-  setTimeout(() => {
+async function onSubmit() {
+  try {
+    const data = await loginApi(formData.value)
     // 存储token
-    useStorage('token', 'token123456')
+    useStorage('token', data.token)
     router.push('/')
-  }, 1000)
+  }
+  catch (error) {
+
+  }
 }
 </script>
 

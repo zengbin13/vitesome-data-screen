@@ -49,11 +49,11 @@ function handleScreenAuto() {
 
 onMounted(() => {
   handleScreenAuto()
-  window.onresize = () => handleScreenAuto()
+  window.addEventListener('resize', handleScreenAuto)
 })
 
 onBeforeUnmount(() => {
-  window.onresize = null
+  window.removeEventListener('resize', handleScreenAuto)
 })
 </script>
 

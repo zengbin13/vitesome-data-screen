@@ -6,9 +6,10 @@ const backgroundPic = ref(backgroundImage)
 
 <template>
   <div>
-    <ScaleScreen :background-image="backgroundPic">
-      <div class="contant">
-        xxxx
+    <ScaleScreen :background-image="backgroundPic" :width="1920" :height="961">
+      <div class="content">
+        <Navbar />
+        <RouterView />
       </div>
     </ScaleScreen>
   </div>
@@ -17,8 +18,6 @@ const backgroundPic = ref(backgroundImage)
 <style lang="scss" scoped>
 .content {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-
-  }
+  color: #fff;
+}
 </style>
