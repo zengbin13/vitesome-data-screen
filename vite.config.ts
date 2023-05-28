@@ -31,6 +31,7 @@ export default defineConfig({
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
+      exclude: ['**/components/*.vue'],
       extendRoute(route, parent) {
         if (route.path === '/login')
           return route

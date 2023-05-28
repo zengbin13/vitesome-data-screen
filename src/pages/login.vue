@@ -25,7 +25,7 @@ async function onSubmit() {
 
 <template>
   <div>
-    <ScaleScreen :background-image="backgroundPic" :auto-scale="false">
+    <ScaleScreen :background-image="backgroundPic" :auto-scale="true">
       <div class="content">
         <div class="logo-wrap">
           <img src="../assets/images/logo.png" alt="" class="logo">
