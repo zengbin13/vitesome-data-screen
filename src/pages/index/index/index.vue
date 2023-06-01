@@ -5,9 +5,11 @@
 <template>
   <div class="wrap">
     <div class="left">
-      <ChartBox class="box" />
-      <ChartBox class="box" />
-      <ChartBox class="box" />
+      <ChartBox />
+      <ChartBox />
+      <ChartBox>
+        <HorizontalBar />
+      </ChartBox>
     </div>
     <div class="center">
       <ChartBox />
@@ -26,9 +28,7 @@
   width: 25%;
   display: flex;
   flex-direction: column;
-  .box {
-    flex: 1
-  }
+
  }
  .right {
   width: 25%;

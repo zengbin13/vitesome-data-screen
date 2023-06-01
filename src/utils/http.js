@@ -16,9 +16,10 @@ instance.interceptors.request.use((config) => {
 
 // 添加响应拦截器
 instance.interceptors.response.use((response) => {
-  if (response.data.code === 200)
-    return response.data.data
-  return response.data
+  if (response.data.code === 0)
+    return response.data
+  else
+    Promise.reject(response.data)
 }, (error) => {
   // 超出 2xx 范围的状态码都会触发该函数。
   // 对响应错误做点什么

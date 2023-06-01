@@ -5,8 +5,8 @@ import { loginApi } from '~/utils/apis'
 const backgroundPic = ref(backgroundImage)
 
 const formData = ref({
-  farm: '19100000001',
-  henhouse: '666888',
+  farm: '',
+  henhouse: '',
 })
 
 const router = useRouter()
