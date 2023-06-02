@@ -16,10 +16,15 @@ instance.interceptors.request.use((config) => {
 
 // 添加响应拦截器
 instance.interceptors.response.use((response) => {
-  if (response.data.code === 0)
+  if (response.data.code === 0) {
     return response.data
-  else
+  }
+  else {
+    const { message } = response.data
+    // eslint-disable-next-line no-alert
+    alert(message)
     Promise.reject(response.data)
+  }
 }, (error) => {
   // 超出 2xx 范围的状态码都会触发该函数。
   // 对响应错误做点什么

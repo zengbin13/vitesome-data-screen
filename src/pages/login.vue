@@ -9,23 +9,27 @@ const formData = ref({
   henhouse: '',
 })
 
+const loading = ref(false)
+
 const router = useRouter()
 async function onSubmit() {
   try {
+    loading.value = true
     const data = await loginApi(formData.value)
     // 存储token
     useStorage('token', data.token)
+    loading.value = false
     router.push('/')
   }
   catch (error) {
-
+    loading.value = false
   }
 }
 </script>
 
 <template>
   <div>
-    <ScaleScreen :background-image="backgroundPic" :auto-scale="true">
+    <ScaleScreen :background-image="backgroundPic" :auto-scale="false">
       <div class="content">
         <div class="logo-wrap">
           <img src="../assets/images/logo.png" alt="" class="logo">
@@ -46,8 +50,9 @@ async function onSubmit() {
               </label>
               <input id="henhouse" v-model="formData.henhouse" type="text">
             </div>
-            <button class="login-button" @click="onSubmit">
-              登录
+            <button class="login-button" :disabled="loading" @click="onSubmit">
+              <div v-show="loading" i-ri-loader-2-fill mx-2 animate-spin />
+              <span>登录</span>
             </button>
           </div>
         </div>
@@ -106,6 +111,9 @@ async function onSubmit() {
     font-size: 20px;
     letter-spacing: 5px;
     transition: all .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       border: 1px solid #98c0f7;

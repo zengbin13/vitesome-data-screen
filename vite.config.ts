@@ -33,7 +33,7 @@ export default defineConfig({
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       exclude: ['**/components/*.vue'],
-      extendRoute(route, parent) {
+      extendRoute(route) {
         if (route.path === '/login')
           return route
 
@@ -69,7 +69,7 @@ export default defineConfig({
 
     viteMockServe({
       mockPath: 'mock',
-      enable: true,
+      watchFiles: true,
     }),
   ],
 
