@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./dist", // 指定输出目录为 "./dist"
-    "module": "ESNext",
-    "target": "es2016",
+    "target": "esnext",
+    "module": "esnext",
     "lib": ["DOM", "ESNext"],
     "strict": true,
     "jsx": "preserve",

@@ -69,7 +69,9 @@ export default defineConfig({
 
     viteMockServe({
       mockPath: 'mock',
-      watchFiles: true,
+      watchFiles: process.env.NODE_ENV === 'development',
+      localEnabled: process.env.NODE_ENV === 'development',
+      prodEnabled: process.env.NODE_ENV === 'production',
     }),
   ],
 
