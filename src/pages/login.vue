@@ -15,9 +15,9 @@ const router = useRouter()
 async function onSubmit() {
   try {
     loading.value = true
-    const data = await loginApi(formData.value)
-    // 存储token
-    useStorage('token', data.token)
+    const { data } = await loginApi(formData.value)
+    // 存储token 导航到首页
+    localStorage.setItem('token', data.token)
     loading.value = false
     router.push('/')
   }

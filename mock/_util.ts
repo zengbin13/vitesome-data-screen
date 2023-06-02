@@ -1,16 +1,16 @@
-function resultSuccess<T = Record<string, any>>(result: T, { message = 'ok' } = {}) {
+function resultSuccess<T = Record<string, any>>(data: T, { message = 'ok' } = {}) {
   return {
     code: 0,
-    result,
+    data,
     message,
     type: 'success',
   }
 }
 
-function resultError(message = 'Request failed', { code = -1, result = null } = {}) {
+function resultError(message = 'Request failed', { code = -1, data = null } = {}) {
   return {
     code,
-    result,
+    data,
     message,
     type: 'error',
   }

@@ -6,13 +6,14 @@ export default [
     url: '/api/login',
     method: 'post',
     timeout: 2000,
-    response: ({ body: { account, password } }) => {
+    response: ({ body }: { body: Record<string, string> }) => {
+      const { account, password } = body
       if (!account || account.length < 6)
         return resultError('账号格式不正常')
       if (!password || password.length < 6)
         return resultError('密码不正常')
       return resultSuccess({
-        token: 'xxxxxx',
+        token: 'HVeUSCHLl6mA__ohs1NvAEUOzGUuyrXEZxufw_S__WY',
       })
     },
   },
