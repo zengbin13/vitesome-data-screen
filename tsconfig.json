@@ -9,6 +9,8 @@
     "jsx": "preserve",
     "esModuleInterop": true,
     "skipLibCheck": true,
+    // "moduleResolution": "bundler",
+    // （模块解析）用于指定模块导入语句的解析策略
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "noUnusedLocals": true,

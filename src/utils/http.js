@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { ElMessage } from 'element-plus'
 
 const instance = axios.create({
   baseURL: '/api',
@@ -21,8 +22,7 @@ instance.interceptors.response.use((response) => {
   }
   else {
     const { message } = response.data
-    // eslint-disable-next-line no-alert
-    alert(message)
+    ElMessage.warning(message || '未知错误')
     Promise.reject(response.data)
   }
 }, (error) => {
