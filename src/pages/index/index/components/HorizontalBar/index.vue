@@ -18,7 +18,7 @@ const props = defineProps({
 
 const option = ref({
   grid: {
-    top: 10,
+    top: 30,
     bottom: 10,
     left: 10,
     right: 10,
@@ -126,7 +126,7 @@ const option = ref({
   <VChart class="chart" :option="option" autoresize />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .chart {
   width: 100%;
   height: 100%;

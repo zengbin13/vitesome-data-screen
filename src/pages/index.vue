@@ -8,7 +8,7 @@ const backgroundPic = ref(backgroundImage)
   <div>
     <ScaleScreen :background-image="backgroundPic" :width="1920" :height="1080" :auto-scale="true">
       <div class="content">
-        <!-- <Navbar /> -->
+        <Navbar />
         <RouterView />
       </div>
     </ScaleScreen>
@@ -19,5 +19,8 @@ const backgroundPic = ref(backgroundImage)
 .content {
   height: 100%;
   color: #fff;
+  border: 1px solid #26d21d;
+  display: flex;
+  flex-direction: column;
 }
 </style>

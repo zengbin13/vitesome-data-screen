@@ -25,6 +25,9 @@ dependencies:
   vue:
     specifier: ^3.3.2
     version: 3.3.2
+  vue-countup-v3:
+    specifier: ^1.2.0
+    version: 1.2.0(vue@3.3.2)
   vue-echarts:
     specifier: ^6.5.5
     version: 6.5.5(echarts@5.4.2)(vue@3.3.2)
@@ -2366,6 +2369,10 @@ packages:
   /console-control-strings@1.1.0:
     resolution: {integrity: sha512-ty/fTekppD2fIwRvnZAVdeOiGd1c7YXEixbgJTNzqcxJWKQnjJ/V1bNEEE6hygpM3WjwHFUVK6HTjWSzV4a8sQ==}
     dev: true
+
+  /countup.js@2.6.2:
+    resolution: {integrity: sha512-PRvoilkebwr1MKaRAllyJl2cD7mgunGZWXLaSFL+YqHXlJpjLX7SHTWonRfIx2xg1Xf7SPbo92bOOonSIomRYQ==}
+    dev: false
 
   /cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -6375,6 +6382,15 @@ packages:
       - supports-color
       - terser
     dev: true
+
+  /vue-countup-v3@1.2.0(vue@3.3.2):
+    resolution: {integrity: sha512-IRCdZNyoyYeJeoBoqlPeTUzNE6Hks+Hi2L+ezUe+PXb/3DIZCYZghM0ztxakaOX5lqD3RLfx+I9lqw0S6zH+yQ==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      countup.js: 2.6.2
+      vue: 3.3.2
+    dev: false
 
   /vue-demi@0.13.11(vue@3.3.2):
     resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}

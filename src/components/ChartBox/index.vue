@@ -12,17 +12,24 @@ const props = defineProps({
     <div class="title">
       {{ props.title }}
     </div>
-    <slot>图表</slot>
+    <slot>
+      <div class="flex-1 border border-white">
+        图表
+      </div>
+    </slot>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .box-wrap {
   padding: 10px;
-  flex: 1
-}
-.title {
-  background-color: #17324c;
-  color: #e2f4fd;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    background-color: #17324c;
+    color: #e2f4fd;
+  }
 }
 </style>
