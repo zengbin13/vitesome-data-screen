@@ -1,3 +1,5 @@
+@import 'element-plus/dist/index.css';
+
 html,
 body,
 #app {
@@ -9,3 +11,33 @@ body,
 html.dark {
   background: #121212;
 }
+
+html .el-message {
+  --bg-color-container: rgba(101, 182, 232, .1);
+  --shadow-3: 0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 12%),
+    0 8px 10px rgba(0, 0, 0, 20%);
+  --shadow-inset-top: inset 0 0.5px 0 #5e5e5e;
+  --shadow-inset-right: inset 0.5px 0 0 #5e5e5e;
+  --shadow-inset-bottom: inset 0 -0.5px 0 #5e5e5e;
+  --shadow-inset-left: inset -0.5px 0 0 #5e5e5e;
+  --text-color-primary: rgba(255, 255, 255, 0.9);
+  --brand-color: #0052d9;
+  --success-color: #059465;
+  --error-color: #c64751;
+  --warning-color: #cf6e2d;
+
+  backdrop-filter: blur(35px);
+  border-radius: 10px;
+
+  background-color: var(--bg-color-container);
+  box-shadow: var(--shadow-3), var(--shadow-inset-top), var(--shadow-inset-right),
+    var(--shadow-inset-bottom), var(--shadow-inset-left);
+  border: none;
+  color: var(--text-color-primary);
+  margin-top: 90px;
+}
+
+html .el-message .el-message__content {
+    color: rgba(255, 255, 255, 0.9);
+  }
+

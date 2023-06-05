@@ -7,7 +7,6 @@ import { setupPermissions } from '~/router/permissions'
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
-import 'element-plus/dist/index.css'
 
 import 'echarts'
 
