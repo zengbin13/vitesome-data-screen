@@ -1,4 +1,6 @@
 @import 'element-plus/dist/index.css';
+@import url('//at.alicdn.com/t/c/font_4121647_6hmf3d3oiuv.css');
+
 
 html,
 body,
@@ -12,6 +14,10 @@ html.dark {
   background: #121212;
 }
 
+$primary-color : #4c82fe;
+
+
+// 自定义el-message样式
 html .el-message {
   --bg-color-container: rgba(101, 182, 232, .1);
   --shadow-3: 0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 12%),
@@ -26,7 +32,7 @@ html .el-message {
   --error-color: #c64751;
   --warning-color: #cf6e2d;
 
-  backdrop-filter: blur(35px);
+  // backdrop-filter: blur(35px);
   border-radius: 10px;
 
   background-color: var(--bg-color-container);
@@ -35,9 +41,47 @@ html .el-message {
   border: none;
   color: var(--text-color-primary);
   margin-top: 90px;
-}
-
-html .el-message .el-message__content {
+  .el-message__content {
     color: rgba(255, 255, 255, 0.9);
   }
+}
+
+// 页面通用布局
+.page-wrap {
+  height: 100%;
+  display: flex;
+
+  &>.left,
+  &>.right {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &>.center {
+    flex: 1;
+    margin: 0 30px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// 渐变色标题样式 Gradient
+@font-face {
+  font-family: 'YouShe';
+  src: url('../assets/fonts/YouSheBiaoTiHei-2.ttf');
+}
+.gradient-title {
+    font-family: YouShe, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background: linear-gradient(180deg,
+        #f3f3f3 40%,
+        $primary-color 90%,
+        $primary-color 100%);
+      background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
 

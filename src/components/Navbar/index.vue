@@ -9,18 +9,18 @@ const navbarList = ref([
     title: '云仓管理',
     path: '/warehouse',
   },
-  {
-    title: '溯源管理',
-    path: '/trace',
-  },
-  {
-    title: '认养管理',
-    path: '/adopt',
-  },
-  {
-    title: '载禾平台管理',
-    path: '/platform',
-  },
+  // {
+  //   title: '溯源管理',
+  //   path: '/trace',
+  // },
+  // {
+  //   title: '认养管理',
+  //   path: '/adopt',
+  // },
+  // {
+  //   title: '载禾平台管理',
+  //   path: '/platform',
+  // },
 ])
 
 const route = useRoute()
@@ -55,7 +55,7 @@ const activeIndex = computed(() => {
 <style lang="scss" scoped>
 .navbar {
   height: 74px;
-  border: 1px solid #f05252;
+  // border: 1px solid #f05252;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -63,7 +63,7 @@ const activeIndex = computed(() => {
 
   .title-wrap {
     width: 80%;
-    border: 1px solid #7cf052;
+    // border: 1px solid #7cf052;
 
     .title {
       text-align: center;

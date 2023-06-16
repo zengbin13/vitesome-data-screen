@@ -1,5 +1,4 @@
-<script setup>
-import HorizontalBar from './components/HorizontalBar/index.vue'
+<script setup lang="ts">
 import NumberJump from './components/NumberJump/index.vue'
 </script>
 
@@ -9,23 +8,29 @@ import NumberJump from './components/NumberJump/index.vue'
       <ChartBox>
         <NumberJump />
       </ChartBox>
-      <ChartBox>
-        <HorizontalBar />
-      </ChartBox>
+      <ChartBox />
       <ChartBox />
     </div>
     <div class="center">
       <ChartBox />
     </div>
     <div class="right">
+      <ChartBox title="滚动表格" />
       <ChartBox />
       <ChartBox />
-      <ChartBox />
+      <!-- <HorizontalBar /> -->
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+ .row-content {
+    background-color: #ef9191;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+
 .wrap {
   height: 100%;
   display: flex;

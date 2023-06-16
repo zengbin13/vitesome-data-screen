@@ -1,12 +1,15 @@
 <script setup>
 import SaleStatistics from './components/SaleStatistics.vue'
+import NumberJump from './components/NumberJump/index.vue'
 </script>
 
 <template>
-  <div class="wrap">
+  <div class="page-wrap">
     <div class="left">
-      <ChartBox title="box" />
-      <ChartBox title="云仓销售统计/ Real-time monitoring">
+      <ChartBox title="当前云仓概况">
+        <NumberJump />
+      </ChartBox>
+      <ChartBox title="云仓销售统计">
         <SaleStatistics />
       </ChartBox>
       <ChartBox title="box" />
@@ -21,20 +24,5 @@ import SaleStatistics from './components/SaleStatistics.vue'
 </template>
 
 <style lang="scss" scoped>
-.wrap {
-  height: 100%;
- display: flex;
- .left {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
 
- }
- .right {
-  width: 25%;
- }
- .center {
-  flex: 1;
- }
-}
 </style>

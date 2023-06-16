@@ -13,6 +13,9 @@ dependencies:
   element-plus:
     specifier: ^2.3.6
     version: 2.3.6(vue@3.3.2)
+  gsap:
+    specifier: ^3.12.1
+    version: 3.12.1
   highcharts-vue:
     specifier: ^1.4.1
     version: 1.4.1(highcharts@11.0.1)(vue@3.3.2)
@@ -3590,6 +3593,10 @@ packages:
   /grapheme-splitter@1.0.4:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
+
+  /gsap@3.12.1:
+    resolution: {integrity: sha512-FXtb2YbBE9l8I9Pl5DFLpCMedaiMPztRlr0Ln0CMSnJn+pbTaeKlzgth8cLNPc7PzNwIZe+SEQiBBAWaBKJdVA==}
+    dev: false
 
   /gzip-size@6.0.0:
     resolution: {integrity: sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==}

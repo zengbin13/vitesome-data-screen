@@ -5,7 +5,7 @@ import App from './App.vue'
 import { setupPermissions } from '~/router/permissions'
 
 import '@unocss/reset/tailwind.css'
-import './styles/main.css'
+import './styles/main.scss'
 import 'uno.css'
 
 import 'echarts'
