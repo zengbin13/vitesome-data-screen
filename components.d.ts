@@ -10,7 +10,6 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ChartBox: typeof import('./src/components/ChartBox/index.vue')['default']
-    HorizontalBar: typeof import('./src/components/HorizontalBar/index.vue')['default']
     Navbar: typeof import('./src/components/Navbar/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
