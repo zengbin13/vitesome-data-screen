@@ -17,3 +17,10 @@ export function getWarehouseOverviewApi() {
     method: 'get',
   })
 }
+
+export function getWarehouseSaleApi() {
+  return request({
+    url: '/api/warehouse/sale',
+    method: 'get',
+  })
+}

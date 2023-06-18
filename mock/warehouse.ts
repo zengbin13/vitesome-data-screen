@@ -30,5 +30,41 @@ export default [
       }])
     },
   },
+  {
+    url: '/api/warehouse/sale',
+    method: 'get',
+    timeout: 200,
+    response: () => {
+      return resultSuccess([{
+        time: 2017,
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: 2018,
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: 2019,
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: 2020,
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: 2021,
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: 2022,
+        count: Mock.Random.natural(20, 200),
+      },
+      {
+        time: 2023,
+        count: Mock.Random.natural(100, 500),
+      },
+      ])
+    },
+  },
 
 ] as MockMethod[]

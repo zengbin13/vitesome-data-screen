@@ -14,5 +14,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScaleScreen: typeof import('./src/components/ScaleScreen/index.vue')['default']
+    ScrollTable: typeof import('./src/components/ScrollTable/index.vue')['default']
+    SeamlessScroll: typeof import('./src/components/SeamlessScroll/index.vue')['default']
   }
 }
