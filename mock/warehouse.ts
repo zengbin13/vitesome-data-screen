@@ -66,5 +66,137 @@ export default [
       ])
     },
   },
+  {
+    url: '/api/warehouse/production',
+    method: 'get',
+    timeout: 200,
+    response: () => {
+      return resultSuccess([{
+        time: '1月',
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: '2月',
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: '3月',
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: '4月',
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: '5月',
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: '6月',
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: '7月',
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: '8月',
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: '9月',
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: '10月',
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: '11月',
+        count: Mock.Random.natural(100, 500),
+      },
+      {
+        time: '12月',
+        count: Mock.Random.natural(100, 500),
+      },
+
+      ])
+    },
+  },
+  {
+    url: '/api/warehouse/dosage',
+    method: 'get',
+    timeout: 200,
+    response: () => {
+      return resultSuccess([{
+        time: 2017,
+        last_year: Mock.Random.natural(100, 500),
+        this_year: Mock.Random.natural(100, 500),
+      },
+      {
+        time: 2018,
+        last_year: Mock.Random.natural(100, 500),
+        this_year: Mock.Random.natural(100, 500),
+      },
+      {
+        time: 2019,
+        last_year: Mock.Random.natural(100, 500),
+        this_year: Mock.Random.natural(100, 500),
+      },
+      {
+        time: 2020,
+        last_year: Mock.Random.natural(100, 500),
+        this_year: Mock.Random.natural(100, 500),
+      },
+      {
+        time: 2021,
+        last_year: Mock.Random.natural(100, 500),
+        this_year: Mock.Random.natural(100, 500),
+      },
+      {
+        time: 2022,
+        last_year: Mock.Random.natural(100, 500),
+        this_year: Mock.Random.natural(100, 500),
+      },
+      {
+        time: 2023,
+        last_year: Mock.Random.natural(100, 500),
+        this_year: Mock.Random.natural(100, 500),
+      },
+      ])
+    },
+  },
+  {
+    url: '/api/warehouse/ratio',
+    method: 'get',
+    timeout: 200,
+    response: () => {
+      return resultSuccess([{
+        name: '种植类',
+        value: Mock.Random.natural(10, 50),
+
+      },
+      {
+        name: '养殖类',
+        value: Mock.Random.natural(100, 500),
+
+      },
+      {
+        name: '蔬菜类',
+        value: Mock.Random.natural(10, 500),
+
+      },
+      {
+        name: '农资类',
+        value: Mock.Random.natural(100, 200),
+
+      },
+      {
+        name: '防护类',
+        value: Mock.Random.natural(100, 500),
+      },
+      ])
+    },
+  },
 
 ] as MockMethod[]

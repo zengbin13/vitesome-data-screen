@@ -24,3 +24,25 @@ export function getWarehouseSaleApi() {
     method: 'get',
   })
 }
+
+export function getWarehouseProductionApi(id) {
+  return request({
+    url: '/api/warehouse/production',
+    method: 'get',
+    params: { id },
+  })
+}
+
+export function getWarehouseDosageApi() {
+  return request({
+    url: '/api/warehouse/dosage',
+    method: 'get',
+  })
+}
+
+export function getWarehouseRatioApi() {
+  return request({
+    url: '/api/warehouse/ratio',
+    method: 'get',
+  })
+}

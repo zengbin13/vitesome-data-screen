@@ -1,8 +1,18 @@
 <script setup>
 import VChart from 'vue-echarts'
-import { getWarehouseSaleApi as getChartDataApi } from '~/utils/apis'
+import { getWarehouseDosageApi as getChartDataApi } from '~/utils/apis'
 
 const option = ref({
+  legend: {
+    right: 0,
+    itemGap: 20,
+    itemStyle: {
+    },
+    textStyle: {
+      color: '#fff',
+      fontSize: 14,
+    },
+  },
   grid: {
     top: 45,
     bottom: 5,
@@ -31,9 +41,7 @@ const option = ref({
   yAxis: {
     show: true,
     type: 'value',
-    animation: false,
     name: '单位: 吨',
-    max: 'dataMax',
     nameTextStyle: {
       fontSize: 15,
       color: '#fff',
@@ -57,11 +65,15 @@ const option = ref({
   },
   series: [
     {
+      name: '去年用量',
+      type: 'bar',
       data: [],
-      type: 'pictorialBar',
-      barWidth: '50%',
-      barCategoryGap: '10%',
-      symbol: 'triangle',
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(255,255,255,0.1)',
+      },
+      barGap: 0,
+      barCategoryGap: '30%',
       color: {
         type: 'linear',
         x: 0,
@@ -69,20 +81,36 @@ const option = ref({
         x2: 0,
         y2: 1,
         colorStops: [{
-          offset: 0.3, color: 'rgba(149, 243, 255, 1)',
+          offset: 0, color: '#207ce8',
         }, {
-          offset: 1, color: 'rgba(149, 243, 255, 0.5)',
+          offset: 0.8, color: '#1ddaff',
         }],
         global: false,
       },
     },
     {
-      data: [],
+      name: '今年用量',
       type: 'bar',
-      barWidth: '50%',
-      barCategoryGap: '10%',
-      color: 'rgba(255,255,255,0.1)',
-      z: 1,
+      data: [],
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(255,255,255,0.2)',
+      },
+      barGap: 0,
+      barCategoryGap: '30%',
+      color: {
+        type: 'linear',
+        x: 0,
+        y: 0,
+        x2: 0,
+        y2: 1,
+        colorStops: [{
+          offset: 0, color: '#f2c04d',
+        }, {
+          offset: 0.8, color: '#f6dd6f',
+        }],
+        global: false,
+      },
     },
   ],
   dataZoom: [
@@ -93,7 +121,15 @@ const option = ref({
       end: 100,
     },
   ],
-
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'line',
+      textStyle: {
+        color: '#fff',
+      },
+    },
+  },
 })
 const loading = ref(false)
 async function getChartData() {
@@ -101,12 +137,10 @@ async function getChartData() {
   try {
     const { data } = await getChartDataApi()
     option.value.xAxis.data = data.map(item => item.time)
-    const countList = data.map(item => item.count)
-    const bgValue = Math.ceil(Math.max(...countList) / 100) * 100
-    option.value.yAxis.max = bgValue
-    const bgList = countList.map(() => bgValue)
-    option.value.series[0].data = countList
-    option.value.series[1].data = bgList
+    const lastYearList = data.map(item => item.last_year)
+    const thisYearList = data.map(item => item.this_year)
+    option.value.series[0].data = lastYearList
+    option.value.series[1].data = thisYearList
   }
   catch (error) {
 
@@ -124,10 +158,9 @@ onActivated(() => {
   <VChart class="chart" :option="option" autoresize />
 </template>
 
-<style scoped>
+<style  lang="scss" scoped>
 .chart {
   width: 100%;
   height: 100%;
-  color:#a5a5a6
 }
 </style>

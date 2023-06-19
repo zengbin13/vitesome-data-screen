@@ -6,6 +6,7 @@ const backgroundPic = ref(backgroundImage)
 
 <template>
   <div>
+    <!-- 1920 1080 -->
     <ScaleScreen :background-image="backgroundPic" :width="1920" :height="1080" :auto-scale="true">
       <div class="content">
         <Navbar />
