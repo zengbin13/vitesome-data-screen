@@ -8,12 +8,16 @@ const props = defineProps({
     type: String,
     default: 'Real-time monitoring',
   },
+  showTitle: {
+    type: Boolean,
+    default: true,
+  },
 })
 </script>
 
 <template>
   <div class="box-wrap">
-    <div v-if="props.title" class="title-wrap">
+    <div v-if="props.showTitle" class="title-wrap">
       <div class="light" />
       <span class="iconfont icon-video-camera-full" />
       <div class="title gradient-title">

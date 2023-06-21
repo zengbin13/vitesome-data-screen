@@ -46,3 +46,10 @@ export function getWarehouseRatioApi() {
     method: 'get',
   })
 }
+
+export function getWarehouseMapApi() {
+  return request({
+    url: '/api/warehouse/map',
+    method: 'get',
+  })
+}

@@ -5,6 +5,7 @@ import ProductionLine from './components/ProductionLine.vue'
 import HorizontalBar from './components/HorizontalBar.vue'
 import DosageBar from './components/DosageBar.vue'
 import RatioPie from './components/RatioPie.vue'
+import ChinaMap from './components/ChinaMap.vue'
 
 // import ThreeDimensionalPie from './components/ThreeDimensionalPie.vue'
 </script>
@@ -23,7 +24,9 @@ import RatioPie from './components/RatioPie.vue'
       </ChartBox>
     </div>
     <div class="center">
-      <ChartBox />
+      <ChartBox :show-title="false">
+        <ChinaMap />
+      </ChartBox>
     </div>
     <div class="right">
       <ChartBox title="云仓物品占比">

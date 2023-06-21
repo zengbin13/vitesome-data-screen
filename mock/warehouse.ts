@@ -198,5 +198,23 @@ export default [
       ])
     },
   },
-
+  {
+    url: '/api/warehouse/map',
+    method: 'get',
+    timeout: 200,
+    response: () => {
+      return resultSuccess([
+        { name: '山东省', value: 620 },
+        { name: '天津', value: 468 },
+        { name: '湖南省', value: 1027 },
+        { name: '广东省', value: 438 },
+        { name: '江苏省', value: 692 },
+        { name: '新疆维吾尔自治区', value: 928 },
+        { name: '上海', value: 340 },
+        { name: '河南省', value: 568 },
+        { name: '广西壮族自治区', value: 687 },
+        { name: '甘肃省', value: 236 },
+      ])
+    },
+  },
 ] as MockMethod[]
