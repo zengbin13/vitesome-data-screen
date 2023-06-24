@@ -173,7 +173,7 @@ export default [
     response: () => {
       return resultSuccess([{
         name: '种植类',
-        value: Mock.Random.natural(10, 50),
+        value: Mock.Random.natural(20, 70),
 
       },
       {
@@ -215,6 +215,41 @@ export default [
         { name: '广西壮族自治区', value: 687 },
         { name: '甘肃省', value: 236 },
       ])
+    },
+  },
+  {
+    url: '/api/warehouse/horizontal',
+    method: 'get',
+    timeout: 200,
+    response: () => {
+      return resultSuccess({
+        list: [{
+          name: '种植类',
+          value: Mock.Random.natural(20, 70),
+
+        },
+        {
+          name: '养殖类',
+          value: Mock.Random.natural(100, 500),
+
+        },
+        {
+          name: '蔬菜类',
+          value: Mock.Random.natural(10, 500),
+
+        },
+        {
+          name: '农资类',
+          value: Mock.Random.natural(100, 200),
+
+        },
+        {
+          name: '防护类',
+          value: Mock.Random.natural(100, 500),
+        },
+        ],
+        max: 500,
+      })
     },
   },
 ] as MockMethod[]

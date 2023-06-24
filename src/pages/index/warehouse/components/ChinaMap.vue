@@ -55,27 +55,86 @@ async function loadMap() {
       tooltip: {
         show: true,
       },
-      series: [{
-        name: 'MAP',
-        type: 'map',
+      visualMap: {
+        seriesIndex: 0,
+        left: 20,
+        bottom: 20,
+        pieces: [
+          { gte: 1000, label: '1000个以上' },
+          { gte: 600, lte: 999, label: '600-999个' },
+          { gte: 200, lte: 599, label: '200-599个' },
+          { gte: 50, lte: 199, label: '49-199个' },
+          { gte: 10, lte: 49, label: '10-49个' },
+          { lte: 9, label: '1-9个' },
+        ],
+        inRange: {
+          color: [
+            'rgba(237,247,253,.8)',
+            'rgba(183,225,246,.9)',
+            'rgba(129,202,239,.9)',
+            'rgba(56,172,229,.9)',
+            'rgba(23,129,181,.9)',
+            'rgba(16,90,126,0.9)',
+          ],
+        },
+        textStyle: {
+          color: '#fff',
+        },
+      },
+      geo: {
         map: code.value,
         selectedMode: 'false',
         zoom: 1.2,
-        data,
+        roam: true, // 是否允许缩放和平移
         itemStyle: {
+          borderColor: 'rgba(147, 235, 248, .8)',
+          borderWidth: 1,
           areaColor: {
             type: 'radial',
             x: 0.5,
             y: 0.5,
-            r: 0.5,
+            r: 0.8,
             colorStops: [{
-              offset: 0, color: 'rgba(31, 178, 246, 0.8)',
+              offset: 0, color: 'rgba(21, 108, 201, 0.1)',
             }, {
-              offset: 0.8, color: 'rgba(31, 129, 233, 1)',
+              offset: 0.8, color: 'rgba(31, 129, 233, 0.2)',
             }],
             global: false,
           },
         },
+        emphasis: {
+          label: {
+            show: false,
+          },
+          itemStyle: {
+            borderWidth: 2,
+            areaColor: {
+              type: 'radial',
+              x: 0.5,
+              y: 0.5,
+              r: 0.8,
+              colorStops: [{
+                offset: 0, color: 'rgba(21, 108, 201, 0.2)',
+              }, {
+                offset: 0.8, color: 'rgba(31, 129, 233, 0.8)',
+              }],
+              global: false,
+            },
+          },
+        },
+        // label: {
+        //   show: false,
+        //   color: '#000',
+        //   formatter(val) {
+        //     return val.data ? val.name.slice(0, 2) : ''
+        //   },
+        // },
+      },
+      series: [{
+        name: 'MAP',
+        type: 'map',
+        geoIndex: 0, // map itemstyle 不生效 使用geo配置项
+        data,
       }],
     }
 }

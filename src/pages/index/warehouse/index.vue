@@ -1,5 +1,6 @@
 <script setup>
 import SaleStatistics from './components/SaleStatistics.vue'
+
 import NumberJump from './components/NumberJump.vue'
 import ProductionLine from './components/ProductionLine.vue'
 import HorizontalBar from './components/HorizontalBar.vue'

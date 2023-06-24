@@ -53,3 +53,10 @@ export function getWarehouseMapApi() {
     method: 'get',
   })
 }
+
+export function getWarehouseHorizontalApi() {
+  return request({
+    url: '/api/warehouse/horizontal',
+    method: 'get',
+  })
+}

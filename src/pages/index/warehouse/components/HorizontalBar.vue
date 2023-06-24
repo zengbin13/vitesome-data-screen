@@ -2,20 +2,10 @@
 import VChart from 'vue-echarts'
 import * as echarts from 'echarts'
 
-const props = defineProps({
-  source: {
-    type: Array,
-    default: () => {
-      return [
-        { name: '饲料1', value: 43.3, max_value: 100 },
-        { name: '饲料2', value: 83.1, max_value: 100 },
-        { name: '饲料3', value: 86.4, max_value: 100 },
-        { name: '饲料4', value: 72.4, max_value: 100 },
-      ]
-    },
-  },
-})
+import { getWarehouseHorizontalApi as getChartDataApi } from '~/utils/apis'
 
+const source = ref([])
+const chartRef = ref(null)
 const option = ref({
   grid: {
     top: 30,
@@ -38,7 +28,7 @@ const option = ref({
       axisLine: 'none',
       position: 'left',
       // offset: -10,
-      data: props.source.map(item => item.name),
+      data: [],
       axisLabel: {
         interval: 0,
         align: 'left',
@@ -67,7 +57,7 @@ const option = ref({
       inverse: true,
       axisTick: 'none',
       axisLine: 'none',
-      data: props.source.map((item) => {
+      data: source.value.map((item) => {
         return `${(item.value / item.max_value * 100)}%`
       }),
       axisLabel: {
@@ -83,7 +73,7 @@ const option = ref({
   ],
   dataset: {
     dimensions: ['name', 'value', 'max_value'],
-    source: props.source,
+    source: source.value,
   },
   series: [
     {
@@ -120,10 +110,39 @@ const option = ref({
     },
   ],
 })
+const loading = ref(false)
+async function getChartData() {
+  loading.value = true
+  try {
+    const {
+      data: {
+        list,
+        max,
+      },
+    } = await getChartDataApi()
+    source.value = list.map((item) => {
+      return {
+        ...item,
+        max_value: max,
+      }
+    })
+    option.value.dataset.source = source.value
+    // chartRef.value.refresh()
+  }
+  catch (error) {
+    throw (new Error('获取信息失败'))
+  }
+  finally {
+    loading.value = true
+  }
+}
+onActivated(() => {
+  getChartData()
+})
 </script>
 
 <template>
-  <VChart class="chart" :option="option" autoresize />
+  <VChart ref="chartRef" class="chart" :option="option" autoresize />
 </template>
 
 <style lang="scss" scoped>

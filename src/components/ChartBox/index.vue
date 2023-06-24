@@ -29,7 +29,7 @@ const props = defineProps({
       </div>
     </div>
     <div class="box-content">
-      <slot class="flex-1">
+      <slot>
         图表
       </slot>
     </div>

@@ -66,7 +66,10 @@ onActivated(() => {
 
 <style lang="scss" scoped>
 .counter-wrap {
+  height: 100%;
   flex: 1;
+  max-height: 100%;
+  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -74,6 +77,8 @@ onActivated(() => {
   .counter {
     display: flex;
     align-items: center;
+    height: 100px;
+    align-self: center;
 
     &>img {
       width: 72px;
